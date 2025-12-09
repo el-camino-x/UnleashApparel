@@ -92,4 +92,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ======= ANTI INSPECT =======
+
+    // Tambahin popup warning
+    function showWarning(msg) {
+        const popup = document.getElementById("warnPopup");
+        if(!popup) return;
+        popup.textContent = msg;
+        popup.classList.add("show");
+
+        setTimeout(() => {
+            popup.classList.remove("show");
+        }, 500); // 0.5 detik
+    }
+
+    // Klik kanan
+    document.addEventListener("contextmenu", function(e) {
+        e.preventDefault();
+        showWarning("Stop trying to get into my mind!");
+    });
+
+    // Keyboard
+    document.onkeydown = function(e) {
+        // F12
+        if(e.keyCode === 123) { showWarning("Stop trying to get into my mind!"); return false; }
+        // CTRL+SHIFT+I
+        if(e.ctrlKey && e.shiftKey && e.keyCode === 73){ showWarning("Stop trying to get into my mind!"); return false; }
+        // CTRL+SHIFT+J
+        if(e.ctrlKey && e.shiftKey && e.keyCode === 74){ showWarning("Stop trying to get into my mind!"); return false; }
+        // CTRL+U
+        if(e.ctrlKey && e.keyCode === 85){ showWarning("Stop trying to get into my mind!"); return false; }
+    };
+
 });
