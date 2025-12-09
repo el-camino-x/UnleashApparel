@@ -1,4 +1,3 @@
-/* FONT */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
@@ -9,11 +8,10 @@
 }
 
 body {
-    background: #000; /* dasar hitam mewah */
+    background: #000; 
     color: #fff;
 }
 
-/* NAVBAR */
 header {
     position: fixed;
     top: 0;
@@ -23,7 +21,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0,0,0,0.55); /* glass gelap */
+    background: rgba(0,0,0,0.55);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255,0,0,0.12);
     z-index: 100;
@@ -33,7 +31,7 @@ header .logo {
     font-size: 26px;
     font-weight: 700;
     letter-spacing: 2px;
-    color: #c60000; /* merah soft */
+    color: #c60000; 
 }
 
 header nav a {
@@ -45,10 +43,9 @@ header nav a {
 }
 
 header nav a:hover {
-    color: #ff3b3b; /* merah lembut glow */
+    color: #ff3b3b;
 }
 
-/* HERO SECTION */
 .hero {
     height: 100vh;
     display: flex;
@@ -57,7 +54,6 @@ header nav a:hover {
     padding: 0 40px;
     text-align: center;
 
-    /* Background mewah hitam + red soft gradient */
     background: radial-gradient(circle at bottom center,
         rgba(150,0,0,0.18) 0%,
         rgba(0,0,0,1) 70%
@@ -71,7 +67,7 @@ header nav a:hover {
 }
 
 .hero-content h1 span {
-    color: #c40000; /* merah elegan */
+    color: #c40000;
 }
 
 .hero-content p {
@@ -81,7 +77,6 @@ header nav a:hover {
     letter-spacing: 0.5px;
 }
 
-/* BUTTON MEWAH */
 .btn-explore {
     padding: 12px 30px;
     background: linear-gradient(90deg, #700000, #c20000);
@@ -106,11 +101,10 @@ header nav a:hover {
     font-weight: 400;
     margin-top: -10px;
     margin-bottom: 18px;
-    color: #c40000; /* merah soft mewah */
+    color: #c40000;
     letter-spacing: 1px;
 }
 
-/* VIDEO HERO */
 .hero {
     position: relative;
     height: 100vh;
@@ -133,7 +127,7 @@ header nav a:hover {
     z-index: -1;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    filter: brightness(0.25) saturate(0.8); /* buat hitam merah mewah */
+    filter: brightness(0.25) saturate(0.8);
 }
 
 .hero-content h1,
@@ -142,24 +136,22 @@ header nav a:hover {
     margin: 0;
 }
 
-/* Hero content tetap di atas video */
 .hero-content {
     position: relative;
     z-index: 10;
     color: #fff;
     display: flex;
-    flex-direction: column; /* urut vertikal: gambar → teks */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* jarak antar elemen, kecil supaya rapat */
+    gap: 10px;
 }
 
 header nav a.active {
-    color: #ff3b3b; /* merah lembut glow */
+    color: #ff3b3b;
     font-weight: 600;
 }
 
-/* ===== BUSINESS SECTION ===== */
 .section {
     padding: 100px 40px;
 }
@@ -168,7 +160,7 @@ header nav a.active {
     font-size: 32px;
     text-align: center;
     margin-bottom: 50px;
-    color: #e30000; /* merah soft */
+    color: #e30000;
     font-weight: 700;
 }
 
@@ -212,7 +204,6 @@ header nav a.active {
     box-shadow: 0 0 20px rgba(255,0,0,0.35);
 }
 
-/* ===== GALLERY SECTION ===== */
 .category-buttons {
     text-align: center;
     margin-bottom: 40px;
@@ -283,7 +274,6 @@ header nav a.active {
     transform: translateY(-5px);
 }
 
-/* ===== Category Buttons ===== */
 .category-buttons {
     text-align: center;
     margin-bottom: 40px;
@@ -307,7 +297,6 @@ header nav a.active {
     box-shadow: 0 0 20px rgba(255,0,0,0.45);
 }
 
-/* Tombol kategori aktif */
 .category-buttons button.active {
     background: linear-gradient(90deg, #c20000, #ff3b3b);
     box-shadow: 0 0 25px rgba(255,0,0,0.6);
@@ -316,8 +305,8 @@ header nav a.active {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 kolom */
-    gap: 20px; /* jarak antar grid */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     padding: 0 20px;
 }
 
@@ -394,17 +383,15 @@ header nav a.active {
     cursor: pointer;
 }
 
-/* ===== Layout gallery dengan kategori kiri ===== */
 .gallery-hero .hero-content {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 30px;
     text-align: left;
-    flex-wrap: wrap; /* buat responsive */
+    flex-wrap: wrap;
 }
 
-/* Sidebar kategori */
 .category-buttons {
     display: flex;
     flex-direction: column;
@@ -412,7 +399,6 @@ header nav a.active {
     min-width: 150px;
 }
 
-/* Tombol kategori */
 .category-buttons button {
     width: 100%;
     text-align: left;
@@ -437,15 +423,13 @@ header nav a.active {
     transform: scale(1.03);
 }
 
-/* Gallery grid di kanan */
 .gallery-grid {
-    flex: 1; /* mengambil sisa ruang */
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-/* Responsive */
 @media screen and (max-width: 1024px) {
     .gallery-hero .hero-content {
         flex-direction: column;
@@ -478,6 +462,3 @@ header nav a.active {
     opacity: 1;
     transform: translateY(0);
 }
-
-
-
