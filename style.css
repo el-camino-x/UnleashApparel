@@ -447,3 +447,24 @@ header nav a.active {
     }
 }
 
+.notify-popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 0, 0, 0.85);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+    pointer-events: none;
+}
+.notify-popup.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
