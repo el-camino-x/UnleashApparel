@@ -136,11 +136,22 @@ header nav a:hover {
     filter: brightness(0.25) saturate(0.8); /* buat hitam merah mewah */
 }
 
+.hero-content h1,
+.hero-content h2,
+.hero-content p {
+    margin: 0;
+}
+
 /* Hero content tetap di atas video */
 .hero-content {
     position: relative;
     z-index: 10;
     color: #fff;
+    display: flex;
+    flex-direction: column; /* urut vertikal: gambar → teks */
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* jarak antar elemen, kecil supaya rapat */
 }
 
 header nav a.active {
@@ -278,14 +289,17 @@ header nav a.active {
     margin-bottom: 40px;
 }
 
-.category-buttons {
-    display: flex;     
-    flex-direction: row;     
-    flex-wrap: wrap;    
-    justify-content: center; 
-    gap: 12px;      
-    margin-bottom: 40px;
-    text-align: center;
+.category-buttons button {
+    background: linear-gradient(90deg, #700000, #c20000);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(255,0,0,0.25);
 }
 
 .category-buttons button:hover {
@@ -345,13 +359,6 @@ header nav a.active {
     }
 }
 
-@media screen and (max-width: 768px) {
-    .category-buttons {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-}
-
 .modal {
     display: none;
     position: fixed;
@@ -387,6 +394,70 @@ header nav a.active {
     cursor: pointer;
 }
 
+/* ===== Layout gallery dengan kategori kiri ===== */
+.gallery-hero .hero-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+    text-align: left;
+    flex-wrap: wrap; /* buat responsive */
+}
+
+/* Sidebar kategori */
+.category-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 150px;
+}
+
+/* Tombol kategori */
+.category-buttons button {
+    width: 100%;
+    text-align: left;
+    padding: 10px 16px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #700000, #c20000);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(255,0,0,0.25);
+}
+
+.category-buttons button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255,0,0,0.45);
+}
+
+.category-buttons button.active {
+    background: linear-gradient(90deg, #c20000, #ff3b3b);
+    box-shadow: 0 0 25px rgba(255,0,0,0.6);
+    transform: scale(1.03);
+}
+
+/* Gallery grid di kanan */
+.gallery-grid {
+    flex: 1; /* mengambil sisa ruang */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .gallery-hero .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .category-buttons {
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}
+
 .notify-popup {
     position: fixed;
     top: 20px;
@@ -407,4 +478,6 @@ header nav a.active {
     opacity: 1;
     transform: translateY(0);
 }
+
+
 
