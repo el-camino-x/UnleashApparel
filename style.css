@@ -404,7 +404,10 @@ header nav a.active {
 
 @media screen and (max-width: 480px) {
     .hero-content img {
-        max-width: 120px; 
+        max-width: 180px;  
+        width: 40%; 
+        height: auto;
+        margin-bottom: 10px;
     }
     .hero-content h1 {
         font-size: 24px; 
